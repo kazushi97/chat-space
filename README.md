@@ -2,7 +2,7 @@
 
 # ChatSpace
 
-# DataTable
+## DataTable
 
 ## usersテーブル
 

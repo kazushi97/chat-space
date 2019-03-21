@@ -1,3 +1,4 @@
 class MessagesController < ApplicationController
-  before_action :index
+  def index
+  end
 end

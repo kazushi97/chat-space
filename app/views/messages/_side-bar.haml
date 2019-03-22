@@ -1,9 +1,10 @@
 .side-bar
   .side-header
-    %p.side-header__user-name test-user
+    %p.side-header__user-name
+      = current_user.name
     = link_to '/' do
       %i.fa.fa-edit
-    = link_to '/' do
+    = link_to edit_user_path(current_user) do
       %i.fa.fa-cog
   .side-main
     %p.side-main__group-name test-group

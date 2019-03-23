@@ -26,17 +26,19 @@
     padding: 20px 20px 0;
     background-color: #2f3e51;
     overflow: scroll;
-    &__group-name {
-      margin-bottom: 5px;
-      color: $fontwhitecolor;
-      font-size: 15px;
-      font-weight: bold;
-    }
-    &__group-message {
-      margin-bottom: 40px;
-      color: $fontwhitecolor;
-      font-size: 11px;
-      font-weight: bold;
+    .group {
+      &__name {
+        margin-bottom: 5px;
+        color: $fontwhitecolor;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      &__message {
+        margin-bottom: 40px;
+        color: $fontwhitecolor;
+        font-size: 11px;
+        font-weight: bold;
+      }
     }
   }
 }

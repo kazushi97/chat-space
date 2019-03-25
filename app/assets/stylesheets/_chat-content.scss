@@ -63,7 +63,12 @@
       height: 50px;
       width: 100%;
       display: flex;
-      &__text{
+      .new_message {
+      height: 50px;
+      width: 100%;
+      display: flex;
+      }
+      &__text {
         height: 50px;
         width: 100%;
         padding: 0 10px;

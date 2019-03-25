@@ -15,11 +15,11 @@
         %span.chat-contents__comment-date-time 2019/02/13(wed) 17:50:36
       %p.chat-contents__comment さようなら
   .form
-    %form.input-form{action: '/', method: 'post'}
-      %input.input-form__text{type: 'text', placeholder: 'type a message'}
-      .text-box
-        %label.text-box__image
-          %i.fa.fa-image
-            %input.file-send{type: 'file', name: 'datafile'}
-      %button.input-form__send-btn{type: 'submit', name: 'action', value: 'send'}
-        Send
+    .input-form
+      = form_for [@group, @message] do |f|
+        = f.text_field :body, class: 'input-form__text', placeholder: "type a message"
+        .text-box
+          = f.label :image, class: 'text-box__image' do
+            %i.fa.fa-image
+              = f.file_field :image, class: 'file-send'
+        = f.submit 'Send', class: 'input-form__send-btn'

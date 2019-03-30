@@ -1,25 +1,5 @@
-.chat-content
-  .chat-header
-    %p.chat-header__group-name test-group
-    %p.chat-header__group-member Member : test-user
-    = link_to '/groups/1/edit' do
-      .chat-header__edit Edit
-  .chat-main
-    .chat-contents
-      %p.chat-contents__comment-user
-        test-user
-        %span.chat-contents__comment-date-time 2019/02/13(wed) 17:50:36
-      %p.chat-contents__comment こんにちは！
-      %p.chat-contents__comment-user
-        test-user
-        %span.chat-contents__comment-date-time 2019/02/13(wed) 17:50:36
-      %p.chat-contents__comment さようなら
-  .form
-    .input-form
-      = form_for [@group, @message] do |f|
-        = f.text_field :body, class: 'input-form__text', placeholder: "type a message"
-        .text-box
-          = f.label :image, class: 'text-box__image' do
-            %i.fa.fa-image
-              = f.file_field :image, class: 'file-send'
-        = f.submit 'Send', class: 'input-form__send-btn'
+.chat-header
+  %p.chat-header__group-name test-group
+  %p.chat-header__group-member Member : test-user
+  = link_to '/groups/1/edit' do
+    .chat-header__edit Edit

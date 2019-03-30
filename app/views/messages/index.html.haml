@@ -1,2 +1,6 @@
 = render "messages/side-bar"
-= render "messages/chat-content"
+.chat-content
+  = render "messages/chat-content"
+  .chat-main
+    = render @messages
+  = render "messages/form"

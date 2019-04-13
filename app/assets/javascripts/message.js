@@ -10,8 +10,8 @@ $(function() {
                   </div>
                   <p class="chat-contents__comment">
                     ${message.body}
-                      ${imagehtml}
                   </p>
+                  ${imagehtml}
                 </div>`
     return html;
   }
@@ -31,6 +31,7 @@ $(function() {
       var html = buildHTML(data);
       $('.chat-main').append(html)
       $('.input-form__text').val('')
+      $('.file-send').val('')
       $('.chat-main').animate({scrollTop: $('.chat-main')[0].scrollHeight}, 'fast');
     })
     .fail(function(){

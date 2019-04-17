@@ -29,9 +29,9 @@ $(function() {
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.chat-main').append(html)
-      $('.input-form__text').val('')
-      $('.file-send').val('')
+      $('.chat-main').append(html);
+      $('.input-form__text').val('');
+      $('.file-send').val('');
       $('.chat-main').animate({scrollTop: $('.chat-main')[0].scrollHeight}, 'fast');
       $('.input-form__send-btn').prop('disabled', false);
     })

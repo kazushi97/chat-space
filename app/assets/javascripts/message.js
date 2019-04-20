@@ -8,13 +8,14 @@ $(function() {
                       ${message.created_at}
                     </span>
                   </div>
-                  <p class="chat-contents__comment">
+                  <p class="chat-contents__comment" data-id="${message.id}">
                     ${message.body}
                   </p>
                   ${imagehtml}
                 </div>`
     return html;
   }
+
   $("#new_message").on("submit", function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -39,4 +40,27 @@ $(function() {
       alert('error!');
     })
   });
+
+  var reloadMessages = function() {
+    last_message_id = $(".chat-contents__comment:last").data('id');
+    $.ajax({
+      url: '/groups/:group_id/api/messages',
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages){
+      console.log('success');
+      var insertHTML = '';
+      messages.forEach(function(message){
+        insertHTML = buildHTML(message);
+        $('.chat-main').append(insertHTML);
+        $('.chat-main').animate({scrollTop: $('.chat-main')[0].scrollHeight}, 'fast');
+      });
+    })
+    .fail(function(){
+      console.log('auto_reload_error');
+    });
+  };
+  setInterval(reloadMessages, 5000);
 });

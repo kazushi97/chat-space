@@ -50,7 +50,6 @@ $(function() {
       data: {id: last_message_id}
     })
     .done(function(messages){
-      console.log('success');
       var insertHTML = '';
       messages.forEach(function(message){
         insertHTML = buildHTML(message);
@@ -59,7 +58,6 @@ $(function() {
       });
     })
     .fail(function(){
-      console.log('auto_reload_error');
     });
   };
   setInterval(reloadMessages, 5000);

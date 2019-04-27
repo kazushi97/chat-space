@@ -37,7 +37,8 @@ $(function() {
       $('.input-form__send-btn').prop('disabled', false);
     })
     .fail(function(){
-      alert('error!');
+      alert('メッセージを入力してください!');
+      $('.input-form__send-btn').prop('disabled', false);
     })
   });
 
